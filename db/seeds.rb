@@ -5,3 +5,44 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+Habit.destroy_all
+User.destroy_all
+HabitSession.destroy_all
+
+
+user = User.create!(
+  email: "stringi@test.com",
+  password: "123456"
+)
+
+
+habit =  Habit.new(
+  title: "Push-ups",
+  description: "Doing regular pushups",
+  needed_session_properties: ["repetitions", "note", "mood"]
+)
+habit.user = user
+habit.save!
+
+puts user.email
+puts habit.title
+
+habit_session = HabitSession.new(
+  repetitions: 5,
+  note: "Test Note",
+  mood: 7,
+  duration: 30
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  repetitions: 10,
+  note: "Test Note 2",
+  mood: 5,
+  duration: 60
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note

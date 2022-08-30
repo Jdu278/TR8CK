@@ -10,9 +10,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_29_152903) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_30_101645) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "habit_sessions", force: :cascade do |t|
+    t.integer "repetitions"
+    t.text "note"
+    t.integer "mood"
+    t.integer "duration"
+    t.bigint "habit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["habit_id"], name: "index_habit_sessions_on_habit_id"
+  end
+
+  create_table "habits", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.string "needed_session_properties"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_habits_on_user_id"
+  end
+
+  create_table "reminders", force: :cascade do |t|
+    t.time "time"
+    t.string "frequency"
+    t.bigint "habit_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["habit_id"], name: "index_reminders_on_habit_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +56,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_29_152903) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "habit_sessions", "habits"
+  add_foreign_key "habits", "users"
+  add_foreign_key "reminders", "habits"
 end
