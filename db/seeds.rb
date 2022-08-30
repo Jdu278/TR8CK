@@ -24,13 +24,21 @@ habit =  Habit.new(
 habit.user = user
 habit.save!
 
+habit =  Habit.new(
+  title: "Pull-ups",
+  description: "Doing regular pullups",
+  needed_session_properties: ["repetitions", "note", "mood"]
+)
+habit.user = user
+habit.save!
+
 puts user.email
 puts habit.title
 
 habit_session = HabitSession.new(
   repetitions: 5,
   note: "Test Note",
-  mood: 7,
+  mood: 3,
   duration: 30
 )
 habit_session.habit = habit
