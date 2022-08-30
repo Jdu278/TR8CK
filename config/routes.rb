@@ -5,4 +5,11 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
+
+  resources :habits do
+    resources :habit_sessions
+    resources :reminders
+  end
+
+
 end
