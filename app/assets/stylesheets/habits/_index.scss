@@ -12,19 +12,17 @@
   margin: 1%;
   display: flex;
   width: 330px;
-  height: 85px;
-  left: 23px;
-  top: 116px;
-  background: #417D7A linear-gradient(0deg, rgba(26,60,64,0.5) 0%, rgba(65,125,122,0.7) 100%);
+  background: #417D7A;
   border: 1px solid #1A3C40;
   filter: drop-shadow(2px 2px 2px rgba(27, 72, 68, 0.5));
-  border-radius: 4px;
   padding-left: 10px;
   padding-right: 10px;
+  border-radius: 4px;
 }
 
 .habitallcontent {
   display: flex;
+  flex-direction: column;
   padding: 2%;
   justify-content: space-between;
   flex: auto;
@@ -33,28 +31,25 @@
 .habitinfo {
   display: flex;
   padding: 4px;
-  background: #E7E6E6;
-  color: #417D7A;
+
+  color: #EDE6DB;
   border-radius: 1px;
   align-items: center;
   padding: 4%;
   font-size: smaller;
   width: 120px;
-  box-shadow: inset 1px 1px 5px #1A3C40;
-  border: 1px solid #1A3C40;
+
 }
 
 .habittitle {
   display: flex;
   padding: 20px;
-  background: #E7E6E6;
-  border-radius: 1px;
+  color: #EDE6DB;
+  border-bottom: #EDE6DB solid 1px;
   align-items: center;
   padding: 4%;
   font-size: large;
-  width: 160px;
-  box-shadow: inset 1px 1px 5px #1A3C40;
-  border: 1px solid #1A3C40;
+  font-weight: bolder;
 }
 
 .link {
