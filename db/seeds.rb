@@ -28,7 +28,7 @@ puts "creating habits:"
 
 habit =  Habit.new(
   title: "call grandma",
-  description: "Doing regular pullups",
+  description: "Best person on the planet!",
   needed_session_properties: ["note", "mood"]
 )
 habit.user = user
