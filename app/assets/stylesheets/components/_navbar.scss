@@ -1,12 +1,52 @@
-.navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+ /* Style the navigation menu */
+ .topnav {
+  overflow: hidden;
+  background-color: #EDE6DB;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #1A3C40;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+/* Hide the links inside the navigation menu (except for logo/home) */
+.topnav #myLinks {
+  display: none;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+/* Style navigation menu links */
+.topnav a {
+  color: #1A3C40;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Style the hamburger menu */
+.topnav a.icon {
+  background: #EDE6DB;
+  display: block;
+  position: absolute;
+  right: 30px;
+  top: 0;
+  &:hover {
+    color: #1A3C40;
+  }
+}
+
+/* Style the active link (or home/logo) */
+.active {
+  background-color: #EDE6DB;
+  color: white;
+  margin-left: 160px;
+  font-size: 40px;
+  &:hover {
+    color: #1A3C40;
+  }
+}
+
+.icon {
+  font-size: 40px;
+  &:hover {
+    color: #1A3C40;
+  }
 }
