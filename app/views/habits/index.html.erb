@@ -1,14 +1,16 @@
 <div class="main">
     <% @habits.each do |habit| %>
-      <div class="habitbody">
-        <div class="habitallcontent">
-          <div class="habittitle">
-            <%= habit.title %>
-          </div>
-          <div class="habitinfo">
-            <%= habit.description %>
+      <a href="https://random.dog/" class="link">
+        <div class="habitbody">
+          <div class="habitallcontent">
+            <div class="habittitle">
+              <%= habit.title %>
+            </div>
+            <div class="habitinfo">
+              <%= habit.description %>
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     <% end %>
 </div>
