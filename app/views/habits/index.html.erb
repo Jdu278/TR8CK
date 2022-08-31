@@ -1,7 +1,14 @@
-<h1>Habits#index</h1>
-<p>Find me in app/views/habits/index.html.erb</p>
-<ul>
-  <% @habits.each do |habit| %>
-    <li><%= habit.title %></li>
-  <% end %>
-</ul>
+<div class="main">
+    <% @habits.each do |habit| %>
+      <div class="habitbody">
+        <div class="habitallcontent">
+          <div class="habittitle">
+            <%= habit.title %>
+          </div>
+          <div class="habitinfo">
+            <%= habit.description %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+</div>
