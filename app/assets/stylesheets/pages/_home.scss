@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .header {
-margin-left: 36%;
-margin-top: 50%;
+margin-left: 1px;
+margin-top: 70%;
 }
 
 .buttons {
@@ -9,21 +9,14 @@ color: rgb(255, 255, 255);
 padding: 8px 24px;
 border-radius: 4px;
 background: #aba9ad;
-margin-left: 36%;
+margin-left: 1%;
 margin-bottom: auto;
-height: 20ch;
 }
 
-.title1 {
-  height:0%
+.header h3 {
+  font-size:large;
 }
-.title2 p {
+.header h1 {
   text-shadow: 1px 1px #ffffff;
-  font-size: 80px;
-}
-
-.title1 p {
-  font-size: 40px;
-  margin: 0;
-
+  font-size:xx-large;
 }
