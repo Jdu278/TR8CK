@@ -27,7 +27,7 @@ puts "___________________________________________"
 puts "creating habits:"
 
 habit =  Habit.new(
-  title: "call grandma",
+  title: "Call grandma",
   description: "Best person on the planet!",
   needed_session_properties: ["note", "mood"]
 )
@@ -124,7 +124,7 @@ habit_session.save!
 puts habit_session.note
 
 habit =  Habit.new(
-  title: "floss teeth",
+  title: "Floss teeth",
   description: "keep 'em shiny!",
   needed_session_properties: ["duration", "note", "mood"]
 )
