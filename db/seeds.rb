@@ -154,5 +154,169 @@ habit_session.habit = habit
 habit_session.save!
 puts habit_session.note
 
+
+habit =  Habit.new(
+  title: "Drink Water",
+  description: "Keep yourself hydrated",
+  needed_session_properties: ["note", "mood"]
+)
+
+habit.user = user
+habit.save!
+puts "___________________________________________"
+puts "created #{habit.title} habbit:"
+
+puts "___________________________________________"
+puts "creating #{habit.title} sessions:"
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: 4,
+  duration: 30
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: 5,
+  duration: 60
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit =  Habit.new(
+  title: "Situps",
+  description: "Stay in shape",
+  needed_session_properties: ["repetitions", "note", "mood"]
+)
+
+habit.user = user
+habit.save!
+puts "___________________________________________"
+puts "created #{habit.title} habbit:"
+
+puts "___________________________________________"
+puts "creating #{habit.title} sessions:"
+
+habit_session = HabitSession.new(
+  repetitions: 20,
+  note: "#{habit.title} test Note",
+  mood: 2,
+  duration: 30
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  repetitions: 35,
+  note: "#{habit.title} test Note 2",
+  mood: 4,
+  duration: 60
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit =  Habit.new(
+  title: "Meditation",
+  description: "It will help you to stay focused",
+  needed_session_properties: ["note", "mood", "duration"]
+)
+
+habit.user = user
+habit.save!
+puts "___________________________________________"
+puts "created #{habit.title} habbit:"
+
+puts "___________________________________________"
+puts "creating #{habit.title} sessions:"
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: 4,
+  duration: 40
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: 5,
+  duration: 50
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+
+habit =  Habit.new(
+  title: "Read",
+  description: "educate yourself",
+  needed_session_properties: ["note", "mood", "duration"]
+)
+
+habit.user = user
+habit.save!
+puts "___________________________________________"
+puts "created #{habit.title} habbit:"
+
+puts "___________________________________________"
+puts "creating #{habit.title} sessions:"
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: 2,
+  duration: 20
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: 3,
+  duration: 10
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+
+habit =  Habit.new(
+  title: "journaling",
+  description: "write your journal for today",
+  needed_session_properties: ["note", "mood", "duration"]
+)
+
+habit.user = user
+habit.save!
+puts "___________________________________________"
+puts "created #{habit.title} habbit:"
+
+puts "___________________________________________"
+puts "creating #{habit.title} sessions:"
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: 2,
+  duration: 20
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: 3,
+  duration: 10
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
 puts "___________________________________________"
 puts "seeds done!"
