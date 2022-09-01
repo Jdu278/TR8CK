@@ -1,1 +1,15 @@
-<%= render "list", habits: @habits %>
+<div data-controller="search-habits">
+  <%= render "list", habits: @habits %>
+  <p class="h3">
+        <%= form_with url: habits_path, method: :get, html: { class: "mb-4", data: { search_habits_target: "form" } } do |f| %>
+          <%= f.text_field :query,
+                            class: "form-control",
+                            placeholder: "Find a Habit",
+                            value: params[:query],
+                            data: {
+                              search_habits_target: "input",
+                              action: "keyup->search-habits#update",
+                            } %>
+        <% end %>
+  </p>
+</div>
