@@ -1,1 +1,4 @@
-<%= render "list", habits: @habits %>
+<div data-controller="search-habits" class="main">
+  <%= render "list", habits: @habits %>
+  <%= render "search", habits: @habits %>
+</div>
