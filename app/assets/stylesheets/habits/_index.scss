@@ -1,5 +1,5 @@
 .main {
-
+  padding-top: 20px;
   background: #EDE6DB;
   display: flex;
   flex-direction: column;
@@ -63,4 +63,11 @@
   &:hover {
     color: inherit;
   }
+}
+
+.searchbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index:1;
 }
