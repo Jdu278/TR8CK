@@ -1,6 +1,6 @@
 .main {
-
   background: #16213E;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   height:100vh;
@@ -63,4 +63,11 @@
   &:hover {
     color: inherit;
   }
+}
+
+.searchbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index:1;
 }

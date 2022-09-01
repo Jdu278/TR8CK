@@ -1,0 +1,12 @@
+<p class="h3" data-controller="search-habits">
+      <%= form_with url: habits_path, method: :get, html: { class: "mb-4", data: { search_habits_target: "form" }, :onsubmit => "submitit()" } do |f| %>
+      <%= f.text_field :query,
+                        class: "form-control",
+                        placeholder: "Find a Habit",
+                        value: params[:query],
+                        data: {
+                          search_habits_target: "input",
+                          action: "keyup->search-habits#update",
+                        } %>
+        <% end %>
+</p>
