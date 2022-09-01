@@ -1,6 +1,14 @@
 .alert {
-  position: fixed;
-  bottom: 16px;
-  right: 16px;
+  position: fixed !important;
+  margin-top: 40px !important;
+  width: 98vw;
   z-index: 1000;
+  background-color: #9b142bD9 !important;
+  color: white !important;
+  text-shadow: 1px 1px 1px black;
+  font-size: 20px !important;
+}
+
+.alert-dismisable {
+  position: fixed !important;
 }
