@@ -8,7 +8,7 @@ class HabitsController < ApplicationController
 
     respond_to do |format|
       format.html # Follow regular flow of Rails
-      format.text { render "index", locals: {habits: @habits}, formats: [:html] }
+      format.text { render partial: "list", locals: {habits: @habits}, formats: [:html] }
     end
   end
 
