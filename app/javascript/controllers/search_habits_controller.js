@@ -30,21 +30,20 @@ export default class extends Controller {
   //       })}
   // })
 
-    this.inputTarget.addEventListener("keydown", ({key}) => {
+    this.inputTarget.addEventListener("submit", ({key}) => {
 
-       if (Event.isComposing || key === "å") {
+        if (Event.isComposing || key === "å") {
       // if (key === "å") {
-        this.chatTarget.classList.remove("invisible")
-        this.chatTarget.click()
-        this.chatinputTarget.focus()
-        this.chatinputTarget.click()
-        this.formTarget.blur()
-        // this.habitsTarget.classList.add("invisible")
-        this.chatTarget.onfocus
-        // this.formTarget.classList.add("invisible")
-        this.formTarget.classList.close
+        const url = `${this.formTarget.action}?creationquery=${this.inputTarget.value}`
+        fetch(url, {headers: {"Accept": "text/plain"}})
+        .then(response => response.text())
+        .then((data) => {
+          console.log({data})
+          this.habitsTarget.outerHTML = data
+        })
       }
-    })
+     }
+    )
 
     this.inputTarget.addEventListener("keyup", ({key}) => {
 
@@ -56,11 +55,12 @@ export default class extends Controller {
           this.habitsTarget.outerHTML = data
           // this.listTarget.outerHTML = data
         })}
+
     })
   }
 
 
-
+  // ?new_habit=blank
 
 
 

@@ -2,6 +2,8 @@
 <div class="padding">
   <%= render "list", habits: @habits %>
 </div>
+<% if params[:new_habit].present? %>
   <%= render "chat", habits: @habits %>
+<% end %>
   <%= render "search", habits: @habits %>
 </div>
