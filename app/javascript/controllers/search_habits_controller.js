@@ -32,8 +32,9 @@ export default class extends Controller {
 
     this.inputTarget.addEventListener("submit", ({key}) => {
 
-        if (Event.isComposing || key === "å") {
+        // if (Event.isComposing || key === "å") {
       // if (key === "å") {
+
         const url = `${this.formTarget.action}?creationquery=${this.inputTarget.value}`
         fetch(url, {headers: {"Accept": "text/plain"}})
         .then(response => response.text())
@@ -41,7 +42,7 @@ export default class extends Controller {
           console.log({data})
           this.habitsTarget.outerHTML = data
         })
-      }
+      // }
      }
     )
 

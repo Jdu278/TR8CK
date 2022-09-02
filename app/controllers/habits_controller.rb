@@ -6,14 +6,14 @@ class HabitsController < ApplicationController
     @habits = Habit.where("title ILIKE ?", "#{params[:creationquery]}")
     if @habits.length == 0
       respond_to do |format|
-        format.html # Follow regular flow of Rails
+        format.html
         format.text { render partial: "list", locals: {habits: @habits}, formats: [:html] }
       end
     end
     return
-  end
 
-  if params[:query].present? && params[:creationquery].blank?
+
+  elsif params[:query].present? && params[:creationquery].blank?
     @habits = Habit.where("title ILIKE ?", "%#{params[:query]}%")
   end
     respond_to do |format|
