@@ -1,0 +1,102 @@
+
+.logo {
+  margin-top: 40px;
+  display: flex;
+  position: fixed;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.logo h1 {
+  font-size: 90px;
+  color: #ffffff;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-variant: bold;
+  font-style: italic;
+}
+
+logo h3 {
+  font-size:30px;
+  color: #ffffff;
+  font-variant: bold;
+  font-style: italic;
+}
+
+
+.loginbackground {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background: linear-gradient(180deg, #0C0F17 0%,rgba(18, 20, 57, 0.1) 50%, rgba(233,69,96,0.2) 100%);
+}
+
+.logincontainer {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 40vh;
+  z-index:1;
+
+}
+element.style {
+  color: white;
+  font-size: 1.2em;
+}
+
+.devisebutton {
+  margin: 3px;
+  padding: 4px 7px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.5);
+  border: 2px solid #e7445f00;
+  transition-duration: 0.4s;
+  border-radius: 2px
+}
+.devisebutton:hover {
+
+  color: white;
+}
+.centrebutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginbutton {
+  margin: 3px;
+  padding: 4px 85px;
+  text-decoration: none;
+  background-color: #E94560;
+  color: white;
+  border: 2px solid #E94560BF;
+  transition-duration: 0.4s;
+  border-radius: 2px
+}
+.loginbutton:hover {
+
+  color: white;
+}
+
+.logincheck {
+  color: #E94560;
+}
+
+
+.loginpopup {
+  position: relative;
+  z-index:5;
+}
+
+.form-check-label {
+  color: palevioletred !important;
+}
+.form-control {
+  background-color: #f8dce4b5 !important;
+}
