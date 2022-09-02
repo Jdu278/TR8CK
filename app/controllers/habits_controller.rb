@@ -14,6 +14,7 @@ class HabitsController < ApplicationController
 
 
   def show
+    @habit = Habit.find(params[:id])
   end
 
   def create

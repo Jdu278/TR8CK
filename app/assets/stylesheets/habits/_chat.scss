@@ -1,0 +1,12 @@
+.chat {
+  position: fixed;
+  height: 200px;
+  width: 200px;
+  background-color: white;
+  color: black;
+  z-index: 20;
+}
+
+.invisible {
+  visibility: hidden;
+}
