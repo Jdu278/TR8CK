@@ -325,7 +325,7 @@ puts habit_session.note
 
 
 title_1 = Faker::Hobby.unique.activity
-title_2 = Faker::Book.author
+title_2 = Faker::Marketing.buzzwords
 
  title_3 = rand(1..5)
  title_4 = rand(10..60)
