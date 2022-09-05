@@ -3,17 +3,47 @@
   margin-right:40px;
   margin-top:100px;
   text-align:center;
-  padding:11px;
+  padding:10px;
   background:#E94560;
   color:#FFFFFF;
+  border-radius: 4px;
 }
 
 .notes {
-  margin: 35px;
-  color:#FFFFFF
+  margin: 10px;
+  margin-top: 40px;
+  color:#FFFFFF;
+  display: flex;
+  justify-content: center;
+  font-size: larger;
 }
 
-.show_img {
-  margin: 31px;
-  margin-left: 19px;
+.chart1 {
+  padding:10px;
+  color:#FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+
+}
+
+
+
+.chart1 h2 {
+  display: flex;
+  justify-content: center;
+}
+
+.chart2 {
+  padding:10px;
+  color:#FFFFFF;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 4px;
+
+}
+
+.chart2 h2 {
+  display: flex;
+  justify-content: center;
 }
