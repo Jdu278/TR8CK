@@ -14,6 +14,7 @@ class HabitsController < ApplicationController
 
   def show
     @habit = Habit.find(params[:id])
+    # @habit_sessions = @habit.habit_sessions
   end
 
   def create
