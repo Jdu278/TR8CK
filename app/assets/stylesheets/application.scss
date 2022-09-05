@@ -19,3 +19,13 @@
 body {
  background-color: #16213E;
 }
+
+.form-control.is-valid {
+  border-color: #E94560;
+}
+
+.form-control.is-valid:focus {
+  border-color: #E94560;
+}
+
+
