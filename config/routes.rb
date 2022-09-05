@@ -19,5 +19,6 @@ Rails.application.routes.draw do
   resources :habits do
     resources :habit_sessions
     resources :reminders
+    resources :profile_page, only: [:show]
   end
 end
