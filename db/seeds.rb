@@ -1,4 +1,7 @@
 require 'faker'
+test = Faker::Date.unique.in_date_period(year: 2018, month: 2)
+
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -325,7 +328,7 @@ puts habit_session.note
 
 
 title_1 = Faker::Hobby.unique.activity
-title_2 = Faker::Book.author
+title_2 = Faker::Marketing.buzzwords
 
  title_3 = rand(1..5)
  title_4 = rand(10..60)

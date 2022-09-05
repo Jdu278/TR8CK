@@ -2,6 +2,4 @@
 import "@hotwired/turbo-rails"
 import "./controllers"
 import "bootstrap"
-import "./custom"
-import "chartkick"
-import "Chart.bundle"
+import "chartkick/chart.js"
