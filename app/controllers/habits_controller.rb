@@ -19,6 +19,12 @@ class HabitsController < ApplicationController
   def create
   end
 
+  def destroy
+    @habit = Habit.find(params[:id])
+    @habit.destroy
+    redirect_to habits_path, status: :see_other
+  end
+
   def profile_page
     @habit = Habit.find(params[:id])
   end
