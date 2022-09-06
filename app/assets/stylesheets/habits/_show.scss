@@ -27,8 +27,6 @@
 
 }
 
-
-
 .chart1 h2 {
   display: flex;
   justify-content: center;
@@ -54,4 +52,21 @@ h2 {
 
 .chart1 {
   margin: 36px;
+}
+
+.remove {
+  display: flex;
+  justify-content: center;
+}
+
+.remove a {
+  color: white;
+  text-decoration: none;
+  background-color: #E94560;
+  width: 90px;
+  margin: 29px;
+  text-align: center;
+  font-family: 'Kanit', sans-serif;
+  font-size: 24px;
+
 }
