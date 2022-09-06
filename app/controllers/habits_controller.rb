@@ -27,10 +27,10 @@ class HabitsController < ApplicationController
     @habit = Habit.new(habit_params)
     @habit.user = current_user
     if @habit.save!
-      partial = "list"
+      redirect_to habits_path
     else
       flash[:alert] = "something went wrong with the creation process"
-      partial = "list"
+      redirect_to habits_path
     end
   end
 
