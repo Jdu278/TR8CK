@@ -11,20 +11,19 @@
       <div class="chart1">
         <% # <%= area_chart dates.sort_by { |el| el[0] } %>
           <h2>Mood:</h2>
-          <%= area_chart @habit_session_average, colors: ["orange", "#250000"] %>
+          <%= line_chart @habit_session_average, colors: ["orange", "#250000"] %>
       </div>
         <br>
         <br>
       <div class="chart2">
         <h2>Duration</h2>
-        <%= area_chart @habit_session_d_average, colors: ["blue", "#250000"] %>
+        <%= line_chart @habit_session_d_average, colors: ["blue", "#250000"] %>
       </div>
         <br>
         <br>
       <div class="chart2">
         <h2>Repetitions</h2>
-        <%= area_chart @habit_session_r_average, colors: ["green", "#250000"] %>
+        <%= line_chart @habit_session_r_average, colors: ["green", "#250000"] %>
       </div>
     </div>
 </div>
-
