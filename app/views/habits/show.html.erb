@@ -16,7 +16,7 @@
         dates << [(Faker::Date.unique.backward(days: 14)), rand(1..5)]
         end %>
         <% # <%= area_chart dates.sort_by { |el| el[0] } %>
-        <h2>Mood:</h2>
+        <h2>Mood</h2>
         <%= area_chart dates, colors: ["orange", "#250000"] %>
   </div>
 
@@ -38,3 +38,9 @@
       data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
     %>
 </div>
+
+<%# <div class=remove>
+    <%= link_to "Delete", habit_path(@habit),
+        data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+      %>
+<%# </div> %>
