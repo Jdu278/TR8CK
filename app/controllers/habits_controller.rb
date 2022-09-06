@@ -21,6 +21,8 @@ class HabitsController < ApplicationController
 
   def destroy
     @habit = Habit.find(params[:id])
+    return unless @habit.user == current_user
+
     @habit.destroy
     redirect_to habits_path, status: :see_other
   end
