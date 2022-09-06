@@ -4,12 +4,10 @@
   <!-- Navigation links (hidden by default) -->
   <div id="myLinks">
     <%= link_to "My profile", edit_user_registration_path %>
-
-    <%# <a href="#myhabits">My Habits</a> %>
-    <%= link_to "My Habits", habits_path %>
-
-
-    <a href="#logout">Log Out</a>
+    <%= link_to "My habits", habits_path %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete} %>
+<%#
+    <a href="#logout">Log Out</a> %>
   </div>
   <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
