@@ -34,6 +34,11 @@ class HabitsController < ApplicationController
     end
   end
 
+  def profile_page
+    @habit = Habit.find(params[:id])
+  end
+
+
   private
 
   def habit_params

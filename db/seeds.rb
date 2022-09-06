@@ -1,3 +1,7 @@
+require 'faker'
+test = Faker::Date.unique.in_date_period(year: 2018, month: 2)
+
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -318,5 +322,53 @@ habit_session = HabitSession.new(
 habit_session.habit = habit
 habit_session.save!
 puts habit_session.note
+
+
+10.times do
+
+
+title_1 = Faker::Hobby.unique.activity
+title_2 = Faker::Marketing.unique.buzzwords
+
+ title_3 = rand(1..5)
+ title_4 = rand(10..60)
+
+
+habit =  Habit.new(
+  title: title_1,
+  description: title_2,
+  needed_session_properties: ["note", "mood"]
+)
+habit.user = user
+habit.save!
+puts "___________________________________________"
+puts "created #{habit.title} habbit:"
+
+puts "___________________________________________"
+puts "creating #{habit.title} sessions:"
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: title_3,
+  duration: title_4
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: title_3,
+  duration: title_4
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+end
+
+
+
+
 puts "___________________________________________"
 puts "seeds done!"

@@ -1,9 +1,27 @@
+<!-- Top Navigation Menu -->
 <div class="topnav">
-  <a href="#home" class="active"><strong>TR8CK</strong></a>
+  <a href="<%= habits_path %>" class="active"><strong>TR8CK</strong></a>
   <!-- Navigation links (hidden by default) -->
-
+  <div id="myLinks">
+    <%= link_to "My profile", edit_user_registration_path %>
+    <%= link_to "My habits", habits_path %>
+    <%= link_to "Sign out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete} %>
+<%#
+    <a href="#logout">Log Out</a> %>
+  </div>
   <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars"></i>
+    <i class="fa fa-bars" style="font-size: 0.73em;"></i>
   </a>
 </div>
+
+<script>
+function myFunction() {
+  var x = document.getElementById("myLinks");
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
+  }
+}
+</script>

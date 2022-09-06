@@ -1,21 +1,22 @@
 
- .logo {
-   margin-top: 40px;
-   display: flex;
-   position: fixed;
-   top: 0;
-   justify-content: center;
-   align-items: center;
-   padding: 20px;
- }
+.logo {
+  margin-top: 40px;
+  display: flex;
+  position: absolute;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
- .logo h1 {
-   font-size: 90px;
-   color: #ffffff;
-   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-   font-variant: bold;
-   font-style: italic;
- }
+.logo h1 {
+  font-size: 90px;
+  color: #ffffff;
+  font-family: 'Kanit', sans-serif;
+  font-variant: bold;
+  font-style: italic;
+  margin: 40px;
+}
 
  logo h3 {
    font-size:30px;
