@@ -5,9 +5,19 @@
   background-color: #16213E;
   position: fixed;
   top: 90vh;
-  z-index:2;
+  z-index:4;
   justify-content: center;
   align-items: center;
   border-top: 1px solid #EDE6DB;
 
+}
+
+.searchform {
+  display: flex;
+}
+
+.submitbutton {
+  color: #16213E;
+  background-color: #E94560;
+  border-radius: 50%;
 }

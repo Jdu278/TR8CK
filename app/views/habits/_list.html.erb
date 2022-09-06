@@ -2,7 +2,7 @@
   <div>
     <div data-search-habits-target="habits">
       <% @habits.each do |habit| %>
-        <a href="<%= habit_path(habit.id) %>" class="link">
+        <a href="<%= habit_path(habit.id) %>" class="link" data-search-habits-target="habitcard">
           <div class="habitbody">
             <div class="habitallcontent">
               <div class="habittitle">

@@ -1,16 +1,19 @@
 <div class="searchbar">
   <div>
-        <%= form_with url: habits_path, method: :get, html: { id: "searchform", class: "mb-4", data: { search_habits_target: "form" } } do |f| %>
+        <%= form_with url: habits_path, method: :get, html: { id: "searchform", class: "mb-4 searchform", data: { search_habits_target: "form" } } do |f| %>
           <%= f.text_field :query,
                             class: "form-control",
                             placeholder: "Find a Habit",
                             value: params[:query],
                             data: {
                               search_habits_target: "input",
-
-
-
                             } %>
+          <%= f.button 'YO!',
+                        class:"submitbutton",
+                        data: {
+                          search_habits_target: "submitit",
+                        }
+                        %>
         <% end %>
   </div>
 </div>
