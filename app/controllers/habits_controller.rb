@@ -41,18 +41,25 @@ class HabitsController < ApplicationController
       end
     end
 
+  def show
+    @habit = Habit.find(params[:id])
+    # @habit_sessions = @habit.habit_sessions
 
   end
-
 
   def create
-
   end
 
+  def profile_page
+    @habit = Habit.find(params[:id])
+  end
+  
+  
   private
 
   def habit_params
     params.permit(:title, :description, :needed_session_properties)
   end
+
 
 end

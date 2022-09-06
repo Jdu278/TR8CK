@@ -6,15 +6,22 @@
   width: 100%;
   border-bottom: 1px solid #EDE6DB;
   position: fixed;
-
   top: 0;
   z-index:4;
   filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, 0.5));
+  font-family: 'Kanit', sans-serif;
 }
 
 /* Hide the links inside the navigation menu (except for logo/home) */
 .topnav #myLinks {
   display: none;
+  margin-left: 30px;
+  padding: 15px;
+  color: #E94560;
+
+  // a {
+  //   color: #E94560;
+  // }
 }
 
 /* Style navigation menu links */
@@ -24,6 +31,13 @@
   text-decoration: none;
   display: block;
 }
+
+
+.topnav a:hover {
+  background-color: #E94560;
+  color: #ffffff;
+}
+
 
 /* Style the hamburger menu */
 .topnav a.icon {

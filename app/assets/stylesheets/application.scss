@@ -15,7 +15,19 @@
 @import "habits/search";
 @import "devise/devise";
 @import "habits/chat";
+@import "habits/show";
+
 
 body {
  background-color: #16213E;
 }
+
+.form-control.is-valid {
+  border-color: #E94560;
+}
+
+.form-control.is-valid:focus {
+  border-color: #E94560;
+}
+
+

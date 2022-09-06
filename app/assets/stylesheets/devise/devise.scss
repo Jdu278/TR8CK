@@ -2,7 +2,7 @@
 .logo {
   margin-top: 40px;
   display: flex;
-  position: fixed;
+  position: absolute;
   top: 0;
   justify-content: center;
   align-items: center;
@@ -12,9 +12,10 @@
 .logo h1 {
   font-size: 90px;
   color: #ffffff;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Kanit', sans-serif;
   font-variant: bold;
   font-style: italic;
+  margin: 40px;
 }
 
 logo h3 {

@@ -1,21 +1,36 @@
 
 <div class=container>
-    <div class=habit_title>
-      <h1 style="margin-left:33px; margin-right:40px; margin-top:32px;
-                text-align:center; padding:11px; background:#E94560; color:#FFFFFF;"
-      >Call grandma</h1>
+    <div class=show_title>
+      <h1> <%= @habit.title %> </h1>
     </div>
-    <div class=notes style="margin: 35px; color:#FFFFFF">
-      <h2>Notes:</h2>
-      <p>Once upon a time I made a promise to
-        call my grandma every day.
-        I want to make this promise a habit. Now
-        I can track this with my new app TR8CK</p>
+    <div class=notes>
+      <p> <%= @habit.description %> </p>
     </div>
-    <div style="margin: 31px;">
-      <%= image_tag "moodpink.png", height: 180 %>
+    <div class=container>
+      <div class="chart1">
+        <% dates = []
+           Faker::UniqueGenerator.clear
+           7.times do
+             dates << [(Faker::Date.unique.backward(days: 14)), rand(1..5)]
+           end %>
+        <% # <%= area_chart dates.sort_by { |el| el[0] } %>
+        <h2>Mood:</h2>
+        <%= area_chart dates, colors: ["orange", "#250000"] %>
+        </div>
+      <div>
       <br>
       <br>
-      <%= image_tag "repspink.png", height: 178 %>
-    </div>
+
+      <div class="chart2">
+       <% dates = []
+          Faker::UniqueGenerator.clear
+          7.times do
+            dates << [(Faker::Date.unique.backward(days: 14)), rand(10..60)]
+          end %>
+        <h2>Duration</h2>
+        <%= area_chart dates.sort_by { |el| el[0] } %>
+
+
+      </div>
+      </div>
 </div>
