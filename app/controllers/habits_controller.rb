@@ -1,6 +1,8 @@
 class HabitsController < ApplicationController
   def index
+
     @habits=Habit.all
+    @user=current_user
 
     if  params[:creationquery].present? && Habit.where("title ILIKE ?", "#{params[:creationquery]}").blank?
       partial = "chat"
@@ -11,8 +13,6 @@ class HabitsController < ApplicationController
       partial = "list"
     end
 
-
-
     if params[:query].present?
     @habits = Habit.where("title ILIKE ?", "%#{params[:query]}%")
     end
@@ -20,33 +20,18 @@ class HabitsController < ApplicationController
       format.html # Follow regular flow of Rails
       format.text { render partial: partial, locals: {habits: @habits}, formats: [:html] }
     end
-    #  elsif params[:creationquery].present?{
-    #    @habits = Habit.where("title ILIKE ?", "#{params[:query]}")
-
-    #    respond_to do |format|
-    #      format.html
-    #      format.text { render partial: "chat",locals: {habits: @habits}, formats: [:html] }
-    #    end}
-
-    if params[:title].present?
-      @habit = Habit.new(habit_params)
-      params[:habit] = @habit
-
-
-      if @habit.save
-        partial = "list"
-      else
-        flash[:alert] = "something went wrong with the creation process"
-        partial = "list"
-      end
-    end
-
-
   end
-
 
   def create
 
+    @habit = Habit.new(habit_params)
+    @habit.user = current_user
+    if @habit.save!
+      partial = "list"
+    else
+      flash[:alert] = "something went wrong with the creation process"
+      partial = "list"
+    end
   end
 
   private
@@ -54,5 +39,4 @@ class HabitsController < ApplicationController
   def habit_params
     params.permit(:title, :description, :needed_session_properties)
   end
-
 end
