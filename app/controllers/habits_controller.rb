@@ -6,10 +6,10 @@ class HabitsController < ApplicationController
       @habits = Habit.where("title ILIKE ?", "%#{params[:query]}%")
     end
 
-    respond_to do |format|
-      format.html # Follow regular flow of Rails
-      format.text { render partial: "list", locals: {habits: @habits}, formats: [:html] }
-    end
+    # respond_to do |format|
+    #   format.html # Follow regular flow of Rails
+    #   format.text { render partial: "list", locals: {habits: @habits}, formats: [:html] }
+    # end
   end
 
   def show
