@@ -47,3 +47,31 @@
   display: flex;
   justify-content: center;
 }
+
+.drop {
+  cursor: pointer;
+  margin: 10px;
+  color:#FFFFFF;
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+}
+
+input[type="checkbox"]  {
+ display: none; /* hide the checkboxes */
+}
+
+input +.drop +  div
+
+{
+  display:none;
+}
+.drop:after {
+  content:'▼';
+  }
+:checked  + .drop:after {
+  content:'▲';
+  }
+input:checked + .drop + div{
+  display:block;
+}
