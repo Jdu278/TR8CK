@@ -6,6 +6,7 @@
     <div class=notes>
       <p> <%= @habit.description %> </p>
     </div>
+
     <div class=container>
       <div class="chart1">
         <% dates = []
@@ -29,8 +30,6 @@
           end %>
         <h2>Duration</h2>
         <%= area_chart dates.sort_by { |el| el[0] } %>
-
-
       </div>
       </div>
 </div>
