@@ -33,8 +33,10 @@
         <h2>Duration</h2>
         <%= area_chart dates.sort_by { |el| el[0] } %>
     </div>
-
+ <br>
+<div class=remove>
   <%= link_to "Delete", habit_path(@habit),
      data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
   %>
+</div>
 </div>
