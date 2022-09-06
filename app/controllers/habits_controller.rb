@@ -6,10 +6,10 @@ class HabitsController < ApplicationController
       @habits = Habit.where("title ILIKE ?", "%#{params[:query]}%")
     end
 
-    respond_to do |format|
-      format.html # Follow regular flow of Rails
-      format.text { render partial: "list", locals: {habits: @habits}, formats: [:html] }
-    end
+    # respond_to do |format|
+    #   format.html # Follow regular flow of Rails
+    #   format.text { render partial: "list", locals: {habits: @habits}, formats: [:html] }
+    # end
   end
 
   def show
@@ -18,6 +18,14 @@ class HabitsController < ApplicationController
   end
 
   def create
+  end
+
+  def destroy
+    @habit = Habit.find(params[:id])
+    return unless @habit.user == current_user
+
+    @habit.destroy
+    redirect_to habits_path, status: :see_other
   end
 
   def profile_page

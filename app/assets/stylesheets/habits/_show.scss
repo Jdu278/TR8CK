@@ -55,3 +55,23 @@ h2 {
 .chart1 {
   margin: 36px;
 }
+
+.remove {
+  display: flex;
+  justify-content: center;
+  padding: 25px;
+}
+
+.remove a {
+  padding: 10px 130px;
+  border-radius: 4px;
+  background: #FFFFFF;
+  text-decoration: none;
+  color: #E94560;
+  font-family: 'Kanit', sans-serif;
+}
+
+.fa-trash-can::before {
+  font-size: 14px;
+  margin-left: 287px;
+}

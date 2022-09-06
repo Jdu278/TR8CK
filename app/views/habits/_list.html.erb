@@ -11,6 +11,11 @@
               <div class="habitinfo">
                 <%= habit.description %>
               </div>
+                <div class="habitremove">
+                  <%= link_to(habit_path(habit), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-white") do %>
+                    <i class="fa-regular fa-trash-can"></i>
+                  <% end %>
+                </div>
             </div>
           </div>
         </a>
@@ -18,4 +23,3 @@
     </div>
   </div>
 </div>
- 

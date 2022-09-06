@@ -1,6 +1,7 @@
 
 <div class=container>
     <div class=show_title>
+
       <h1> <%= @habit.title %> </h1>
     </div>
     <div class=notes>
@@ -21,8 +22,7 @@
       <div>
       <br>
       <br>
-
-      <div class="chart2">
+    <div class="chart2">
        <% dates = []
           Faker::UniqueGenerator.clear
           7.times do
@@ -30,6 +30,14 @@
           end %>
         <h2>Duration</h2>
         <%= area_chart dates.sort_by { |el| el[0] } %>
-      </div>
+
+    </div>
+ <br>
+<div class=remove>
+  <%= link_to "Delete", habit_path(@habit),
+     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+  %>
+</div>
+
       </div>
 </div>
