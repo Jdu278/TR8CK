@@ -108,9 +108,14 @@
    color: #F05454 !important;
  }
  .form-control {
-   background-color: #d5cdcd !important;
+   background-color: #F5F5F5 !important;
+   border-radius: 10px;
  }
 
  .form-inputs {
   margin-top: 100px;
  }
+
+.sign-up-container {
+  position: inherit!important;
+}
