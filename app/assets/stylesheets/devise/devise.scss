@@ -47,7 +47,6 @@
    justify-content: center;
    align-items: center;
    color: white;
-   margin-top: 40vh;
    z-index:1;
    position:fixed;
 
@@ -106,4 +105,8 @@
  }
  .form-control {
    background-color: #f8dce4b5 !important;
+ }
+
+ .form-inputs {
+  margin-top: 100px;
  }
