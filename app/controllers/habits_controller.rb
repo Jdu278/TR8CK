@@ -38,8 +38,10 @@ class HabitsController < ApplicationController
     @habit_session_r_average = @habit_session.transform_values do |value|
       variable = value.pluck(:repetitions)
       # variable.sum / variable.size.to_f
-  def create
+    end
+  end
 
+  def create
     @habit = Habit.new(habit_params)
     @habit.user = current_user
     if @habit.save!
