@@ -26,8 +26,10 @@ export default class extends Controller {
 
         this.submititTarget.addEventListener("click", (event) => {
           // if (created === false) {
+
             event.preventDefault()
-            if (this.inputTarget.value !== "yes" && create === false) newtitle = this.inputTarget.value
+
+            if (this.inputTarget.value.toLowerCase() !== "yes" && create === false ) newtitle = this.inputTarget.value
 
             const url = `${this.formTarget.action}?creationquery=${this.inputTarget.value}`
             fetch(url, {headers: {"Accept": "text/plain"}})
@@ -47,16 +49,23 @@ export default class extends Controller {
 
             var messages = document.getElementsByClassName("message")
 
+            if (chatw.length === 1 && this.inputTarget.value.toLowerCase() === "no" && create === false){
+              console.log('I said no')
+              location.reload();
 
-            if (chatw.length === 1 && this.inputTarget.value === "yes" && create === false){
+            }
+
+
+            else if (chatw.length === 1 && this.inputTarget.value.toLowerCase() === "yes" && create === false){
+
 
                 create = true
 
                 messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message">Yes.`)
-                messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Great! "${newtitle}" has been created! Would you like to add a description?</p>`)
+                messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Great! Lets create a "${newtitle}" habit! Would you like to add a description?</p>`)
             }
 
-            else if (chatw.length === 1 && this.inputTarget.value === "yes" && create === true && description === false && descriptiondone === false) {
+            else if (chatw.length === 1 && this.inputTarget.value.toLowerCase() === "yes" && create === true && description === false && descriptiondone === false) {
 
               messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message">Yes.`)
               messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Please type in the description below.</p>`)
@@ -65,7 +74,7 @@ export default class extends Controller {
 
             }
 
-            else if (chatw.length === 1 && this.inputTarget.value === "no" && create === true && description === false && descriptiondone === false) {
+            else if (chatw.length === 1 && this.inputTarget.value.toLowerCase() === "no" && create === true && description === false && descriptiondone === false) {
 
               messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message">No.`)
               messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Roger that! No description for "${newtitle}" habit. Would you like to add notes in the future?</p>`)
@@ -82,7 +91,7 @@ export default class extends Controller {
               descriptiondone = true
             }
 
-            else if (chatw.length === 1 && notesdone === false && descriptiondone === true && this.inputTarget.value === "no") {
+            else if (chatw.length === 1 && notesdone === false && descriptiondone === true && this.inputTarget.value.toLowerCase() === "no") {
 
               messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message">${this.inputTarget.value}`)
               messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Roger that! No notes for "${newtitle}" habit. Would you like to add repetitions to the habit?</p>`)
@@ -91,7 +100,7 @@ export default class extends Controller {
             }
 
 
-            else if (chatw.length === 1 && notesdone === false && descriptiondone === true && this.inputTarget.value === "yes") {
+            else if (chatw.length === 1 && notesdone === false && descriptiondone === true && this.inputTarget.value.toLowerCase() === "yes") {
 
               messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message">${this.inputTarget.value}`)
               messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Notes option added to the "${newtitle}" habit. Would you like to add repetitions to the habit?</p>`)
@@ -100,7 +109,7 @@ export default class extends Controller {
               notesdone = true
             }
 
-            else if (chatw.length === 1 && notesdone === true && repetitionsdone === false && this.inputTarget.value === "no") {
+            else if (chatw.length === 1 && notesdone === true && repetitionsdone === false && this.inputTarget.value.toLowerCase() === "no") {
 
               messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message">${this.inputTarget.value}`)
               messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Roger that! No repetitions for "${newtitle}" habit. Would you like to add mood rating to the habit?</p>`)
@@ -109,7 +118,7 @@ export default class extends Controller {
             }
 
 
-            else if (chatw.length === 1 && notesdone === true && repetitionsdone === false && this.inputTarget.value === "yes") {
+            else if (chatw.length === 1 && notesdone === true && repetitionsdone === false && this.inputTarget.value.toLowerCase() === "yes") {
 
               messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message">${this.inputTarget.value}`)
               messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Repetitions count added to the "${newtitle}" habit. Would you like to add mood rating to the habit?</p>`)
@@ -118,7 +127,7 @@ export default class extends Controller {
               repetitionsdone = true
             }
 
-            else if (chatw.length === 1 && mooddone === false && repetitionsdone === true && this.inputTarget.value === "no") {
+            else if (chatw.length === 1 && mooddone === false && repetitionsdone === true && this.inputTarget.value.toLowerCase() === "no") {
 
               messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message">${this.inputTarget.value}`)
               messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Roger that! No mood monitoring for "${newtitle}" habit. Almost done! Type "create" to save the habbit.</p>`)
@@ -128,7 +137,7 @@ export default class extends Controller {
             }
 
 
-            else if (chatw.length === 1 && mooddone === false && repetitionsdone === true && this.inputTarget.value === "yes") {
+            else if (chatw.length === 1 && mooddone === false && repetitionsdone === true && this.inputTarget.value.toLowerCase() === "yes") {
 
               messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message">${this.inputTarget.value}`)
               messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">Mood monitoring added to the "${newtitle}" habit. Almost done! Type "create" to save the habbit.</p>`)
@@ -138,7 +147,7 @@ export default class extends Controller {
 
             }
 
-            else if (chatw.length === 1 && created === true && this.inputTarget.value === "create") {
+            else if (chatw.length === 1 && created === true && this.inputTarget.value.toLowerCase() === "create") {
 
               let newneeded_session_properties=[]
               if (newrepetitions === true) newneeded_session_properties.push("repetitions")
@@ -172,9 +181,9 @@ export default class extends Controller {
               document.getElementById('clickme').click();
             }
 
-            else if (chatw.length === 1 && this.inputTarget.value !== ""){
-
-              messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message"> ${this.inputTarget.value}!</p>`)
+            else if (chatw.length === 1 && this.inputTarget.value.toLowerCase() !== ""){
+              let answer = this.inputTarget.value;
+              messages[0].insertAdjacentHTML("beforebegin", `<p class="userhere message"> ${answer}!</p>`)
               if (create === false) messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">sorry, I didn't get that. Would you like to create a new habit named "${newtitle}"?</p>`)
               else messages[0].insertAdjacentHTML("beforebegin", `<p class="bothere message">You seem tired. Perhaps take a nap and get back to this later?</p>`)
             }
