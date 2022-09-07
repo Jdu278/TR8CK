@@ -1,7 +1,7 @@
  /* Style the navigation menu */
  .topnav {
   overflow: hidden;
-  background-color: #16213E;
+  background-color: #30475E;
   display: inline-block;
   width: 100%;
   border-bottom: 1px solid #EDE6DB;
@@ -41,7 +41,7 @@
 
 /* Style the hamburger menu */
 .topnav a.icon {
-  background: #16213E;
+  background: #30475E;
   display: block;
   position: absolute;
   right: 30px;
@@ -53,9 +53,10 @@
 
 /* Style the active link (or home/logo) */
 .active {
-  background-color: #16213E;
+  background-color: #30475E;
   color: white;
   margin-left: 30px;
+  margin-top: 5px;
   font-size: 40px;
   font-family: 'Kanit', sans-serif;
   font-style: italic;
@@ -69,4 +70,17 @@
   &:hover {
     color: white;
   }
+}
+
+img {
+  width: 38px;
+  margin-left: -16px;
+  margin-top: -9px;
+}
+
+p {
+  margin: 14px;
+  font-size: 36px;
+  margin-inline: 10px;
+
 }

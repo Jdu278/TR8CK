@@ -22,7 +22,6 @@ class HabitsController < ApplicationController
     end
   end
 
-
   def show
     @habit = Habit.find(params[:id])
 
@@ -38,6 +37,9 @@ class HabitsController < ApplicationController
     @habit_session_r_average = @habit_session.transform_values do |value|
       variable = value.pluck(:repetitions)
       # variable.sum / variable.size.to_f
+    end
+  end
+  
   def create
 
     @habit = Habit.new(habit_params)
