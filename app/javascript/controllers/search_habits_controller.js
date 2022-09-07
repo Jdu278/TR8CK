@@ -199,6 +199,7 @@ export default class extends Controller {
             // console.log(this.habitsTarget);
 
           })}
+          // this.inputTarget.focus()
 
         })
   }
