@@ -14,19 +14,25 @@
 }
 
 .bothere {
-background-color: white;
+background-color: #fff3f5b5;
 color: black;
 margin: 1px;
 margin-right: 100px;
 width: 200px;
-
+border-radius: 20px 20px 20px 0px;
+padding: 13px;
+font-size: 18px;
 }
+
 .userhere {
-background-color: #E94560;
+background-color: #F05454;
 color: black;margin: 1px;
 width: 200px;
 margin: 1px;
 margin-left: 100px;
+padding: 13px;
+border-radius: 20px 20px 0px 20px;
+font-size: 18px;
 }
 
 #clickme {
