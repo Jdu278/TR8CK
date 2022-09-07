@@ -1,6 +1,8 @@
 <!-- Top Navigation Menu -->
 <div class="topnav">
-  <a href="<%= habits_path %>" class="active"><strong>TR8CK</strong></a>
+    <%= link_to(habits_path, class: "active") do %>
+     <p><%= image_tag "image.png" %><strong style= "margin-inline: 10px;">TR8CK</strong></p>
+    <% end %>
   <!-- Navigation links (hidden by default) -->
   <div id="myLinks">
     <%= link_to "My profile", edit_user_registration_path %>
@@ -11,7 +13,8 @@
   </div>
   <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
   <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-    <i class="fa fa-bars" style="font-size: 0.73em;"></i>
+    <%# <i class="fa fa-bars" style="font-size: 0.73em;"></i> %>
+    <i class="fa-solid fa-gear" style="font-size: 0.73em;"></i>
   </a>
 </div>
 

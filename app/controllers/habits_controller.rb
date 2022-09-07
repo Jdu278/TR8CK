@@ -22,7 +22,6 @@ class HabitsController < ApplicationController
     end
   end
 
-
   def show
     @habit = Habit.find(params[:id])
 
