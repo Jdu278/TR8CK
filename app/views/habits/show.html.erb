@@ -5,10 +5,12 @@
     </div>
     <div class=notes>
       <p> <%= @habit.description %> </p>
+      <%= link_to 'this is a link', habit_path(@habit) %>
     </div>
     <div class=container>
+
       <div class="chart1">
-        <% # <%= area_chart dates.sort_by { |el| el[0] } %>
+
           <h2>Mood:</h2>
           <%= line_chart @habit_session_average, colors: ["orange", "#250000"] %>
       </div>

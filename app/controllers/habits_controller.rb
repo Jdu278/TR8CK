@@ -9,7 +9,7 @@ class HabitsController < ApplicationController
     elsif params[:creationquery].present? && Habit.where("title ILIKE ?", "#{params[:creationquery]}").present?
       @habit = Habit.find_by(title: "#{Habit.where("title ILIKE ?", "#{params[:creationquery]}").pluck(:title)[0] }")
 
-      partial = "show"
+      redirect_to habit_path(@habit, :html), status: :see_other and return
     else
       partial = "list"
     end
