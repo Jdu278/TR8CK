@@ -6,9 +6,10 @@
   top: 0;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 0px 20px;
   font-family: 'Kanit', sans-serif;
-  margin: 43px;
+  margin: 60px 43px;
+  position:fixed;
 
 }
 
@@ -18,7 +19,8 @@
   font-family: 'Kanit', sans-serif;
   font-variant: bold;
   font-style: italic;
-  margin: 40px;
+  margin: 0px 40px;
+  position:fixed;
 }
 
  logo h3 {
@@ -45,8 +47,8 @@
    justify-content: center;
    align-items: center;
    color: white;
-   margin-top: 40vh;
    z-index:1;
+   position:fixed;
 
  }
  element.style {
@@ -103,4 +105,8 @@
  }
  .form-control {
    background-color: #f8dce4b5 !important;
+ }
+
+ .form-inputs {
+  margin-top: 100px;
  }
