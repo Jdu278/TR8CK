@@ -7,7 +7,7 @@ font-family: 'Kanit', sans-serif;
 
 .button {
 z-index:1;
-color: #e9e9e9;
+color: #F5F5F5;
 padding: 10px 130px;
 border-radius: 4px;
 background: #E94560;
@@ -18,18 +18,14 @@ width: 300px;
 
 .header h3 {
   font-size:30px;
-  color: #ffffff;
+  color: #F5F5F5;
   font-variant: bold;
   font-style: italic;
 }
 .header h1 {
-  // text-shadow: 1px 1px #ffffff;
   font-size: 90px;
-  color: #ffffff;
+  color: #F5F5F5;
   font-family: 'Kanit', sans-serif;
-  // font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  // font-variant: bold;
-  // font-style: italic;
 }
 
 
@@ -69,7 +65,7 @@ width: 300px;
 }
 
 .star {
-  $star-count: 50;
+  $star-count: 30;
   --star-color: var(--primary-color);
   --star-tail-length: 6em;
   --star-tail-height: 2px;
