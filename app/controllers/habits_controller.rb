@@ -39,9 +39,8 @@ class HabitsController < ApplicationController
       # variable.sum / variable.size.to_f
     end
   end
-  
-  def create
 
+  def create
     @habit = Habit.new(habit_params)
     @habit.user = current_user
     if @habit.save!
