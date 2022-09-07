@@ -34,7 +34,7 @@ export default class extends Controller {
             .then(response => response.text())
             .then((data) => {
               var chatw = document.getElementsByClassName("chat")
-              if (chatw.length === 0 ){
+              if (chatw.length === 0 && this.inputTarget.value !== ""){
               this.habitsTarget.outerHTML = data
 
             }
