@@ -3,14 +3,16 @@
   display: flex;
   width: 100%;
   background-color: #30475E;
-  position: fixed;
-  top: 90vh;
+  position: sticky;
+  bottom: 0;
   z-index:4;
   justify-content: center;
   align-items: center;
   border-top: 1px solid #EDE6DB;
 
 }
+
+
 
 .searchform {
   display: flex;

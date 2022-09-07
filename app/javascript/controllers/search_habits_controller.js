@@ -195,6 +195,8 @@ export default class extends Controller {
           .then((data) => {
             console.log("keyup")
             this.habitsTarget.outerHTML = data
+            // document.body.scrollIntoView(this.habitsTarget)
+            // console.log(this.habitsTarget);
 
           })}
 
