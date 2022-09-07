@@ -52,10 +52,11 @@
     <div class="star"></div>
   </div>
   <div class="logo">
-  <h1>TR8CK</h1>
+      <h1><%= image_tag "image.png", style: "height:50px;width:auto;" %>
+      <strong style= "margin-inline: 15px; margin-top: 3px; margin-left:-6px; margin-right:92px;">TR8CK</strong></h1>
   </div>
-  <div class="logincontainer">
 
+  <div class="logincontainer">
     <div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), data: { turbo: :false }) do |f| %>
         <div class="form-inputs">

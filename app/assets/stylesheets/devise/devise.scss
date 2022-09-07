@@ -8,24 +8,28 @@
   align-items: center;
   padding: 0px 20px;
   font-family: 'Kanit', sans-serif;
+  font-weight: bold;
   margin: 60px 43px;
   position:fixed;
-
+  
 }
 
 .logo h1 {
-  font-size: 90px;
-  color: #ffffff;
+  // font-size: 90px;
+  color: #F5F4F4;
   font-family: 'Kanit', sans-serif;
   font-variant: bold;
   font-style: italic;
   margin: 0px 40px;
   position:fixed;
+  margin-top: 225px;
+  font-size: 65px;
+  margin-right: -72px;
 }
 
  logo h3 {
    font-size:30px;
-   color: #ffffff;
+   color: #F5F4F4;
    font-variant: bold;
    font-style: italic;
  }
@@ -37,7 +41,7 @@
    align-items: center;
    height: 100vh;
    width: 100vw;
-   background: linear-gradient(180deg, #0C0F17 0%,rgba(18, 20, 57, 0.1) 50%, rgba(233,69,96,0.2) 100%);
+   background: linear-gradient(180deg, #30475E 0%,rgba(18, 20, 57, 0.1) 60%, rgba(0, 0, 0, 0.2) 100%);
  }
 
  .logincontainer {
@@ -46,13 +50,13 @@
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   color: white;
+   color: #F5F4F4;
    z-index:1;
    position:fixed;
-
+   margin-top: 150px;
  }
  element.style {
-   color: white;
+   color: #F5F4F4;
    font-size: 1.2em;
  }
 
@@ -67,7 +71,7 @@
  }
  .devisebutton:hover {
 
-   color: white;
+   color: #F5F4F4;
  }
  .centrebutton {
    display: flex;
@@ -79,19 +83,19 @@
    margin: 3px;
    padding: 4px 85px;
    text-decoration: none;
-   background-color: #E94560;
-   color: white;
-   border: 2px solid #E94560BF;
+   background-color: #F05454;
+   color: #F5F4F4;
+   border: 2px solid #F05454;
    transition-duration: 0.4s;
    border-radius: 2px
  }
  .loginbutton:hover {
 
-   color: white;
+   color: #F5F4F4;
  }
 
  .logincheck {
-   color: #E94560;
+   color: #F05454;
  }
 
 
@@ -101,10 +105,10 @@
  }
 
  .form-check-label {
-   color: palevioletred !important;
+   color: #F05454 !important;
  }
  .form-control {
-   background-color: #f8dce4b5 !important;
+   background-color: #d5cdcd !important;
  }
 
  .form-inputs {
