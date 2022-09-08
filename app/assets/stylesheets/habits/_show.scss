@@ -14,12 +14,15 @@
 }
 
 .notes {
-  margin: 10px;
-  margin-top: 40px;
+  margin: 16px;
+  margin-top: 20px;
   color:#FFFFFF;
   display: flex;
   justify-content: center;
-  font-size: larger;
+}
+
+.notes p {
+  font-size: 21px;
 }
 
 .chart1 {
