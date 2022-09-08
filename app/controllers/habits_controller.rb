@@ -1,6 +1,5 @@
 class HabitsController < ApplicationController
   def index
-
     @habits=Habit.all
     @user=current_user
 
@@ -8,7 +7,10 @@ class HabitsController < ApplicationController
       partial = "chat"
 
     elsif params[:creationquery].present? && Habit.where("title ILIKE ?", "#{params[:creationquery]}").present?
+      @habit = Habit.find_by(title: "#{Habit.where("title ILIKE ?", "#{params[:creationquery]}").pluck(:title)[0] }")
+      params[:creationquery] = ""
       partial = "show"
+
     else
       partial = "list"
     end
@@ -19,11 +21,15 @@ class HabitsController < ApplicationController
     respond_to do |format|
       format.html # Follow regular flow of Rails
       format.text { render partial: partial, locals: {habits: @habits}, formats: [:html] }
+
     end
   end
 
   def show
+
+
     @habit = Habit.find(params[:id])
+
 
     @habit_session = @habit.habit_sessions.where("created_at >?", Date.today - 14).group_by { |session| Date.parse session.created_at.to_s }
     @habit_session_average = @habit_session.transform_values do |value|
