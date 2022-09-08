@@ -1,27 +1,21 @@
-<div class="lsitmain">
-  <div>
-    <div data-search-habits-target="habits">
-      <% @habits.each do |habit| %>
-
-        <a href="<%= habit_path(habit.id) %>" class="link" data-search-habits-target="habitcard">
-
-          <div class="habitbody">
-            <div class="habitallcontent">
-              <div class="habittitle">
-              <strong> <%= habit.title %> </strong>
-              </div>
-              <div class="habitinfo">
-                <%= habit.description %>
-              </div>
-                <div class="habitremove">
-                  <%= link_to(habit_path(habit), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-white") do %>
-                    <i class="fa-regular fa-trash-can"></i>
-                  <% end %>
-                </div>
-            </div>
+<div data-search-habits-target="habits" class="padding">
+  <% @habits.each do |habit| %>
+    <a href="<%= habit_path(habit.id) %>" class="link" data-search-habits-target="habitcard">
+      <div class="habitbody">
+        <div class="habitallcontent">
+          <div class="habittitle">
+          <strong> <%= habit.title %> </strong>
           </div>
-        </a>
-      <% end %>
-    </div>
-  </div>
+          <div class="habitinfo">
+            <%= habit.description %>
+          </div>
+            <div class="habitremove">
+              <%= link_to(habit_path(habit), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "text-white") do %>
+                <i class="fa-regular fa-trash-can"></i>
+              <% end %>
+            </div>
+        </div>
+      </div>
+    </a>
+  <% end %>
 </div>

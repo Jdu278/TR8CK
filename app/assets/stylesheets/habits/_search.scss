@@ -2,15 +2,17 @@
   padding: 10px;
   display: flex;
   width: 100%;
-  background-color: #16213e00;
-  position: fixed;
-  top: 90vh;
+  background-color: 
+  position: sticky;
+  bottom: 0;
   z-index:4;
   justify-content: center;
   align-items: center;
   border-top: 1px solid #ede6db00;
 
 }
+
+
 
 .searchform {
   display: flex;
