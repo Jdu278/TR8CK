@@ -30,172 +30,11 @@ puts "___________________________________________"
 
 puts "creating habits:"
 
-habit =  Habit.new(
-  title: "Call grandma",
-  description: "Best person on the planet!",
-  needed_session_properties: ["note", "mood"]
-)
-habit.user = user
-habit.save!
-puts "___________________________________________"
-puts "created #{habit.title} habbit:"
-
-puts "___________________________________________"
-puts "creating #{habit.title} sessions:"
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: 3,
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: rand(1..3),
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: rand(10..60),
-  created_at: Time.now - rand(1..14).day
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note 2",
-  mood: 2,
-  duration: rand(10..60)
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
 
 habit =  Habit.new(
   title: "Push-ups",
   description: "Doing regular pushups",
-  needed_session_properties: ["repetitions", "note", "mood"]
+  needed_session_properties: ["repetitions", "note", "mood", "duration"]
 )
 habit.user = user
 habit.save!
@@ -205,11 +44,12 @@ puts "created #{habit.title} habbit:"
 puts "___________________________________________"
 puts "creating #{habit.title} sessions:"
 
+
 habit_session = HabitSession.new(
-  repetitions: 5,
   note: "#{habit.title} test Note",
-  mood: 3,
-  duration: 30,
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
   created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
@@ -217,10 +57,10 @@ habit_session.save!
 puts habit_session.note
 
 habit_session = HabitSession.new(
-  repetitions: 10,
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60,
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
   created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
@@ -228,10 +68,10 @@ habit_session.save!
 puts habit_session.note
 
 habit_session = HabitSession.new(
-  repetitions: rand(8..25),
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60,
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
   created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
@@ -239,10 +79,10 @@ habit_session.save!
 puts habit_session.note
 
 habit_session = HabitSession.new(
-  repetitions: rand(8..25),
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60,
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
   created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
@@ -250,10 +90,10 @@ habit_session.save!
 puts habit_session.note
 
 habit_session = HabitSession.new(
-  repetitions: rand(8..25),
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60,
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
   created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
@@ -261,10 +101,10 @@ habit_session.save!
 puts habit_session.note
 
 habit_session = HabitSession.new(
-  repetitions: rand(8..25),
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60,
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
   created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
@@ -272,10 +112,10 @@ habit_session.save!
 puts habit_session.note
 
 habit_session = HabitSession.new(
-  repetitions: rand(8..25),
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60,
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
   created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
@@ -283,10 +123,10 @@ habit_session.save!
 puts habit_session.note
 
 habit_session = HabitSession.new(
-  repetitions: rand(8..25),
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60,
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
   created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
@@ -294,10 +134,76 @@ habit_session.save!
 puts habit_session.note
 
 habit_session = HabitSession.new(
-  repetitions: rand(8..25),
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
   note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60,
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
   created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
@@ -307,7 +213,7 @@ puts habit_session.note
 habit =  Habit.new(
   title: "Pull-ups",
   description: "Doing regular pullups",
-  needed_session_properties: ["repetitions", "note", "mood"]
+  needed_session_properties: ["repetitions", "note", "mood", "duration"]
 )
 habit.user = user
 habit.save!
@@ -317,43 +223,145 @@ puts "created #{habit.title} habbit:"
 puts "___________________________________________"
 puts "creating #{habit.title} sessions:"
 
-habit_session = HabitSession.new(
-  repetitions: 5,
-  note: "#{habit.title} test Note",
-  mood: 3,
-  duration: 30
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  repetitions: 10,
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit =  Habit.new(
-  title: "Floss teeth",
-  description: "keep 'em shiny!",
-  needed_session_properties: ["duration", "note", "mood"]
-)
-habit.user = user
-habit.save!
-puts "___________________________________________"
-puts "created #{habit.title} habbit:"
-
-puts "___________________________________________"
-puts "creating #{habit.title} sessions:"
 
 habit_session = HabitSession.new(
   note: "#{habit.title} test Note",
-  mood: 3,
-  duration: 30
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
@@ -361,13 +369,25 @@ puts habit_session.note
 
 habit_session = HabitSession.new(
   note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
 puts habit_session.note
 
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
 
 habit =  Habit.new(
   title: "Drink Water",
@@ -375,36 +395,11 @@ habit =  Habit.new(
   needed_session_properties: ["note", "mood"]
 )
 
-habit.user = user
-habit.save!
-puts "___________________________________________"
-puts "created #{habit.title} habbit:"
-
-puts "___________________________________________"
-puts "creating #{habit.title} sessions:"
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: 4,
-  duration: 30
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 60
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
 
 habit =  Habit.new(
   title: "Situps",
   description: "Stay in shape",
-  needed_session_properties: ["repetitions", "note", "mood"]
+  needed_session_properties: ["repetitions", "note", "mood", "duration"]
 )
 
 habit.user = user
@@ -415,30 +410,177 @@ puts "created #{habit.title} habbit:"
 puts "___________________________________________"
 puts "creating #{habit.title} sessions:"
 
+
 habit_session = HabitSession.new(
-  repetitions: 20,
   note: "#{habit.title} test Note",
-  mood: 2,
-  duration: 30
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
 puts habit_session.note
 
 habit_session = HabitSession.new(
-  repetitions: 35,
-  note: "#{habit.title} test Note 2",
-  mood: 4,
-  duration: 60
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
 puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
 
 habit =  Habit.new(
   title: "Meditation",
   description: "It will help you to stay focused",
-  needed_session_properties: ["note", "mood", "duration"]
+  needed_session_properties: ["note", "mood", "duration", "repetitions"]
 )
 
 habit.user = user
@@ -449,10 +591,145 @@ puts "created #{habit.title} habbit:"
 puts "___________________________________________"
 puts "creating #{habit.title} sessions:"
 
+
 habit_session = HabitSession.new(
   note: "#{habit.title} test Note",
-  mood: 4,
-  duration: 40
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
@@ -460,8 +737,21 @@ puts habit_session.note
 
 habit_session = HabitSession.new(
   note: "#{habit.title} test Note 2",
-  mood: 5,
-  duration: 50
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
@@ -471,7 +761,7 @@ puts habit_session.note
 habit =  Habit.new(
   title: "Read",
   description: "educate yourself",
-  needed_session_properties: ["note", "mood", "duration"]
+  needed_session_properties: ["note", "mood", "duration", "repetitions"]
 )
 
 habit.user = user
@@ -482,10 +772,145 @@ puts "created #{habit.title} habbit:"
 puts "___________________________________________"
 puts "creating #{habit.title} sessions:"
 
+
 habit_session = HabitSession.new(
   note: "#{habit.title} test Note",
-  mood: 2,
-  duration: 20
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
@@ -493,32 +918,10 @@ puts habit_session.note
 
 habit_session = HabitSession.new(
   note: "#{habit.title} test Note 2",
-  mood: 3,
-  duration: 10
-)
-habit_session.habit = habit
-habit_session.save!
-puts habit_session.note
-
-
-habit =  Habit.new(
-  title: "journaling",
-  description: "write your journal for today",
-  needed_session_properties: ["note", "mood", "duration"]
-)
-
-habit.user = user
-habit.save!
-puts "___________________________________________"
-puts "created #{habit.title} habbit:"
-
-puts "___________________________________________"
-puts "creating #{habit.title} sessions:"
-
-habit_session = HabitSession.new(
-  note: "#{habit.title} test Note",
-  mood: 2,
-  duration: 20
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
@@ -526,15 +929,17 @@ puts habit_session.note
 
 habit_session = HabitSession.new(
   note: "#{habit.title} test Note 2",
-  mood: 3,
-  duration: 10
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
 puts habit_session.note
 
 
-70.times do
+10.times do
 
 
 title_1 = Faker::Hobby.unique.activity
@@ -547,7 +952,7 @@ title_2 = Faker::Marketing.buzzwords
 habit =  Habit.new(
   title: title_1,
   description: title_2,
-  needed_session_properties: ["note", "mood"]
+  needed_session_properties: ["note", "mood", "duration", "repetitions"]
 )
 habit.user = user
 habit.save!
@@ -557,10 +962,145 @@ puts "created #{habit.title} habbit:"
 puts "___________________________________________"
 puts "creating #{habit.title} sessions:"
 
+
 habit_session = HabitSession.new(
   note: "#{habit.title} test Note",
-  mood: title_3,
-  duration: title_4
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
@@ -568,8 +1108,21 @@ puts habit_session.note
 
 habit_session = HabitSession.new(
   note: "#{habit.title} test Note 2",
-  mood: title_3,
-  duration: title_4
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
+)
+habit_session.habit = habit
+habit_session.save!
+puts habit_session.note
+
+habit_session = HabitSession.new(
+  note: "#{habit.title} test Note 2",
+  mood: rand(1..5),
+  duration: rand(10..60),
+  repetitions: rand(10..20),
+  created_at: Time.now - rand(1..14).day
 )
 habit_session.habit = habit
 habit_session.save!
