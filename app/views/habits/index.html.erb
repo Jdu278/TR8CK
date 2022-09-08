@@ -1,9 +1,11 @@
 <div data-controller="search-habits" class="mainindex">
-<div class="padding">
-  <%= render "list", habits: @habits %>
-</div>
-<% if params[:creationquery].present? %>
-  <%= render "chat", habits: @habits %>
-<% end %>
-  <%= render "search", habits: @habits %>
+  <div class="h-100 overflow-scroll">
+    <div class="">
+      <%= render "list", habits: @habits %>
+    </div>
+  </div>
+  <% if params[:creationquery].present? %>
+    <%= render "chat", habits: @habits %>
+  <% end %>
+  <%= render "search" %>
 </div>

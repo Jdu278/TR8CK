@@ -11,9 +11,16 @@
 
   </head>
 
-  <body><%=render("shared/navbar") unless @disable_nav || devise_controller? %>
-        <%= render "shared/flashes" %>
+  <body>
+    <div class="d-flex flex-column min-vh-100">
+      <%=render("shared/navbar") unless @disable_nav || devise_controller? %>
+      <%= render "shared/flashes" %>
+      <div class="flex-grow-1">
+        <%= yield %>
+      </div>
+      <% if params[:controller] == "habits" && params[:action] == "index" %>
 
-    <%= yield %>
+      <% end %>
+    </div>
   </body>
 </html>
