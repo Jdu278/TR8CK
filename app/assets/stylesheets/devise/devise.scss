@@ -108,12 +108,17 @@
    color: #F05454 !important;
  }
  .form-control {
-   background-color: #F5F5F5 !important;
-   border-radius: 10px;
+   background-color: rgba(48, 71, 94, 0.9) !important;
+   border-radius: 25px;
+   color: rgb(255, 255, 255) !important;
  }
 
  .form-inputs {
   margin-top: 100px;
+ }
+
+ ::placeholder {
+  color: rgba(240, 84, 84, 0.7) !important;
  }
 
 .sign-up-container {

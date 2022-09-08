@@ -2,18 +2,20 @@
   <div>
         <%= form_with url: habits_path, method: :get, html: { id: "searchform", class: "mb-4 searchform", data: { search_habits_target: "form" } } do |f| %>
           <%= f.text_field :query,
-                            class: "form-control",
+                            class: "form-control inputfield",
                             placeholder: "Find a Habit",
                             value: params[:query],
                             data: {
                               search_habits_target: "input",
                             } %>
-          <%= f.button 'YO!',
+          <%= f.button '',
                         class:"submitbutton",
                         data: {
                           search_habits_target: "submitit",
                         }
-                        %>
+                         %>
+                        <i class="fa-solid fa-reply enter"></i>
+
         <% end %>
   </div>
 </div>
