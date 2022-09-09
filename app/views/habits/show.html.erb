@@ -12,19 +12,73 @@
       <div class="chart1">
 
           <h2>Mood:</h2>
-          <%= line_chart @habit_session_average, colors: ["#F05454", "#250000"] %>
+          <%= line_chart @habit_session_average, colors: ["#F05454", "#250000"], library: {
+              scales: {
+                y: {
+                  grid: {
+                    fontSize: 30,
+                  },
+                  ticks: {
+                    color: "#fff"
+                  }
+                },
+                x: {
+                  grid: {
+                  },
+                  ticks: {
+                    color: "#fff"
+                  }
+                }
+              }
+            } %>
       </div>
         <br>
         <br>
       <div class="chart2">
         <h2>Duration</h2>
-        <%= line_chart @habit_session_d_average, colors: ["#F05454", "#250000"] %>
+        <%= line_chart @habit_session_d_average, colors: ["#F05454", "#250000"], library: {
+              scales: {
+                y: {
+                  grid: {
+                    fontSize: 30,
+                  },
+                  ticks: {
+                    color: "#fff"
+                  }
+                },
+                x: {
+                  grid: {
+                  },
+                  ticks: {
+                    color: "#fff"
+                  }
+                }
+              }
+            } %>
       </div>
         <br>
         <br>
       <div class="chart2">
         <h2>Repetitions</h2>
-        <%= line_chart @habit_session_r_average, colors: ["#F05454", "#250000"] %>
+        <%= line_chart @habit_session_r_average, colors: ["#F05454", "#250000"] , library: {
+              scales: {
+                y: {
+                  grid: {
+                    fontSize: 30,
+                  },
+                  ticks: {
+                    color: "#fff"
+                  }
+                },
+                x: {
+                  grid: {
+                  },
+                  ticks: {
+                    color: "#fff"
+                  }
+                }
+              }
+            }%>
       </div>
     </div>
 </div>
