@@ -20,7 +20,7 @@ puts "___________________________________________"
 
 puts "creating user:"
 user = User.create!(
-  email: "stringi@test.com",
+  email: "user@test.com",
   password: "123456"
 )
 
